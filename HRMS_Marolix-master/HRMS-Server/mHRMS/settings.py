@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-#cedo6k@mkcoy%!r2$wy$8h-(9x&ev+v%tvx+-k-o%)2jt$fb^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['43.205.103.6']
 
 AUTH_USER_MODEL = "AdminAccount.User"
 
@@ -87,7 +87,7 @@ DATABASES = {
        'NAME': 'hrms',
        'USER': 'postgres',
        'PASSWORD': 'uuuu1111',
-       'HOST': 'localhost',
+       'HOST': '172.31.46.132',
        'PORT': '5432',
    }
 }
@@ -128,7 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '172.31.46.132:8000/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
