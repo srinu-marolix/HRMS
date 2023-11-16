@@ -1,0 +1,51 @@
+apt update -y
+apt install git -y
+apt install postgresql -y
+systemctl enable postgresql
+systemctl start postgresql
+git clone https://github.com/Marolix2011/HRMS_Marolix.gitS
+ls
+cd HRMS/
+cd HRMS_Marolix-master/HRMS-Server/
+apt install python3 -y
+python3 --version
+apt install python3-pip
+pip install Django
+sudo -i -u postgres
+psql
+CREATE DATABASE "HRMS" ;,use hrms  [sudo -u postgres psql
+create user devuser;
+ALTER DATABASE "HRMS" OWNER TO devuser;
+ALTER USER devuser PASSWORD 'Devuser#123';
+psql -h 3.110.223.159 -U postgres -d hrms] 
+psql -h publicip -U your_postgresql_user -d your_database_name -p 5432
+GRANT ALL PRIVILEGES ON DATABASE "HRMS" TO devuser;
+       \c hrms;
+	   
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO devuser;
+cd HRMS/HRMS_Marolix-master/HRMS-Server/ 
+cd mHRMS/
+vi settings.py [change the passwd and near host mention privateip in database section,
+   in top near allowhost :give publicip in squarebrackets and in '' mention it,in down staticurl infront of static mention privateip:8000/static ]
+ cd ..
+pip install psycopg2-binary
+pip install djangorestframework
+pip install djangorestframework-simplejwt
+sudo apt-get install libpq-dev python3-dev
+pip install psycopg2
+sudo apt install python3.10-venv
+python3 -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+cd /etc/postgresql/14/main
+vi postgresql.cnf [here in down listenadrres give ur privateip remove hash infront of it ]
+vi pg_hba.cnf [ above local host collom
+	   add  host all all privateip/32 md5
+	        host hrms postgres privatip/32 md5
+		in ipv4 line change ip as give ur privateip
+        in below down in replicas also replace privateip		
+			          ]
+python3 manage.py migrate
+sudo systemctl restart postgresql
+sudo systemctl status postgresql
+python3 manage.py runserver privateip:8000
